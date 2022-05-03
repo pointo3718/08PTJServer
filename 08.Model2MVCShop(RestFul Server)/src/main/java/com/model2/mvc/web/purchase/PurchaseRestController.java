@@ -87,7 +87,7 @@ public class PurchaseRestController {
 //	  }
 	  
 //	  @RequestMapping("/getPurchase.do")
-	  @RequestMapping(value="json/getPurchase{tranNo}", method=RequestMethod.GET)
+	  @RequestMapping(value="json/getPurchase/{tranNo}", method=RequestMethod.GET)
 		public Purchase getPurchase(@PathVariable int tranNo
 										) throws Exception{
 			System.out.println("/purchase/json/getPurchase : GET");
@@ -125,16 +125,16 @@ public class PurchaseRestController {
 		}
 		
 //		@RequestMapping("/updateTranCode.do")
-		@RequestMapping(value="json/updateTranCode", method=RequestMethod.POST)
-		public Purchase updateTranCode(@RequestBody Purchase purchase , @RequestBody Product product,HttpServletRequest request) throws Exception{
-			
-			System.out.println("/purchase/json/updateTranCode : POST");
-			
-			product.setProdNo(Integer.parseInt(request.getParameter("prodNo")));
-			purchase.setPurchaseProd(product);
+//		@RequestMapping(value="json/updateTranCode", method=RequestMethod.POST)
+//		public Purchase updateTranCode(@RequestBody Purchase purchase , @RequestBody Product product,HttpServletRequest request) throws Exception{
+//			
+//			System.out.println("/purchase/json/updateTranCode : POST");
+//			
+//			product.setProdNo(Integer.parseInt(request.getParameter("prodNo")));
+//			purchase.setPurchaseProd(product);
 			
 //			String tranCode = request.getParameter("tranCode").trim();
-			purchaseService.updateTranCode(purchase);
+//			purchaseService.updateTranCode(purchase);
 			
 //			ModelAndView modelAndView = new ModelAndView();
 //			if(tranCode.equals("1")) {
@@ -144,8 +144,8 @@ public class PurchaseRestController {
 //				modelAndView.setViewName("redirect:/product/listProduct?menu=search");
 //			}
 //			return modelAndView;
-			return purchase;
-		}
+//			return purchase;
+//		}
 //		
 //		@RequestMapping("/listPurchase.do")
 		@RequestMapping(value="json/listPurchase")
