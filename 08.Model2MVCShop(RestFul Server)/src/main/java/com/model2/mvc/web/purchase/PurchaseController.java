@@ -120,7 +120,7 @@ public class PurchaseController {
 		}
 		
 //		@RequestMapping("/updateTranCode.do")
-		@RequestMapping(value="updateTranCode", method=RequestMethod.GET)
+		@RequestMapping(value="updateTranCode", method=RequestMethod.POST)
 		public ModelAndView updateTranCode(@ModelAttribute("purchase")Purchase purchase , @ModelAttribute("product") Product product,HttpServletRequest request) throws Exception{
 			
 			product.setProdNo(Integer.parseInt(request.getParameter("prodNo")));
